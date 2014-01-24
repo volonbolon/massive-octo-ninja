@@ -7,6 +7,7 @@
 //
 
 #import "VBViewController.h"
+#import "FWKLateralNavigator.h"
 
 @interface VBViewController ()
 
@@ -17,7 +18,47 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+
+    FWKLateralNavigator *ln = [[FWKLateralNavigator alloc] init];
+    [self addChildViewController:ln];
+    UIView *superView = [self view];
+    UIView *lnView = [ln view];
+    [superView addSubview:lnView];
+    [ln didMoveToParentViewController:self];
+    
+    [lnView setTranslatesAutoresizingMaskIntoConstraints:NO];
+    
+    NSLayoutConstraint *topConstraint = [NSLayoutConstraint constraintWithItem:lnView
+                                                                    attribute:NSLayoutAttributeTop
+                                                                    relatedBy:NSLayoutRelationEqual
+                                                                       toItem:superView
+                                                                    attribute:NSLayoutAttributeTop
+                                                                   multiplier:1.0
+                                                                     constant:20.0];
+    NSLayoutConstraint *bottomConstraint = [NSLayoutConstraint constraintWithItem:lnView
+                                                                     attribute:NSLayoutAttributeBottom
+                                                                     relatedBy:NSLayoutRelationEqual
+                                                                        toItem:superView
+                                                                     attribute:NSLayoutAttributeBottom
+                                                                    multiplier:1.0
+                                                                      constant:0.0];
+    NSLayoutConstraint *leadingConstraint = [NSLayoutConstraint constraintWithItem:lnView
+                                                                        attribute:NSLayoutAttributeLeading
+                                                                        relatedBy:NSLayoutRelationEqual
+                                                                           toItem:superView
+                                                                        attribute:NSLayoutAttributeLeading
+                                                                       multiplier:1.0
+                                                                         constant:0.0];
+    NSLayoutConstraint *trailingConstraint = [NSLayoutConstraint constraintWithItem:lnView
+                                                                          attribute:NSLayoutAttributeTrailing
+                                                                          relatedBy:NSLayoutRelationEqual
+                                                                             toItem:superView
+                                                                          attribute:NSLayoutAttributeTrailing
+                                                                         multiplier:1.0
+                                                                           constant:0.0];
+    
+    [superView addConstraints:@[topConstraint, bottomConstraint, leadingConstraint, trailingConstraint]];
+    
 }
 
 - (void)didReceiveMemoryWarning

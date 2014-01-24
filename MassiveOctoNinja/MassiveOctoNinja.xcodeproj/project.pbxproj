@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B094A9E11892B02400E3FD92 /* FWKLateralNavigator.m in Sources */ = {isa = PBXBuildFile; fileRef = B094A9DF1892B02400E3FD92 /* FWKLateralNavigator.m */; };
+		B094A9E21892B02400E3FD92 /* FWKLateralNavigator.m in Sources */ = {isa = PBXBuildFile; fileRef = B094A9DF1892B02400E3FD92 /* FWKLateralNavigator.m */; };
+		B094A9E31892B02400E3FD92 /* FWKLateralNavigator.xib in Resources */ = {isa = PBXBuildFile; fileRef = B094A9E01892B02400E3FD92 /* FWKLateralNavigator.xib */; };
+		B094A9E41892B02400E3FD92 /* FWKLateralNavigator.xib in Resources */ = {isa = PBXBuildFile; fileRef = B094A9E01892B02400E3FD92 /* FWKLateralNavigator.xib */; };
 		B0BD1D511891B428009FE020 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0BD1D501891B428009FE020 /* Foundation.framework */; };
 		B0BD1D531891B428009FE020 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0BD1D521891B428009FE020 /* CoreGraphics.framework */; };
 		B0BD1D551891B428009FE020 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0BD1D541891B428009FE020 /* UIKit.framework */; };
@@ -34,6 +38,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B094A9DE1892B02400E3FD92 /* FWKLateralNavigator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FWKLateralNavigator.h; sourceTree = "<group>"; };
+		B094A9DF1892B02400E3FD92 /* FWKLateralNavigator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FWKLateralNavigator.m; sourceTree = "<group>"; };
+		B094A9E01892B02400E3FD92 /* FWKLateralNavigator.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FWKLateralNavigator.xib; sourceTree = "<group>"; };
 		B0BD1D4D1891B428009FE020 /* MassiveOctoNinja.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MassiveOctoNinja.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0BD1D501891B428009FE020 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B0BD1D521891B428009FE020 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -79,6 +86,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B094A9DD18927E3000E3FD92 /* Lateral Navigator */ = {
+			isa = PBXGroup;
+			children = (
+				B094A9DE1892B02400E3FD92 /* FWKLateralNavigator.h */,
+				B094A9DF1892B02400E3FD92 /* FWKLateralNavigator.m */,
+				B094A9E01892B02400E3FD92 /* FWKLateralNavigator.xib */,
+			);
+			name = "Lateral Navigator";
+			sourceTree = "<group>";
+		};
 		B0BD1D441891B428009FE020 = {
 			isa = PBXGroup;
 			children = (
@@ -112,6 +129,7 @@
 		B0BD1D561891B428009FE020 /* MassiveOctoNinja */ = {
 			isa = PBXGroup;
 			children = (
+				B094A9DD18927E3000E3FD92 /* Lateral Navigator */,
 				B0BD1D5F1891B428009FE020 /* VBAppDelegate.h */,
 				B0BD1D601891B428009FE020 /* VBAppDelegate.m */,
 				B0BD1D621891B428009FE020 /* Main.storyboard */,
@@ -229,6 +247,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B094A9E31892B02400E3FD92 /* FWKLateralNavigator.xib in Resources */,
 				B0BD1D691891B428009FE020 /* Images.xcassets in Resources */,
 				B0BD1D5B1891B428009FE020 /* InfoPlist.strings in Resources */,
 				B0BD1D641891B428009FE020 /* Main.storyboard in Resources */,
@@ -239,6 +258,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B094A9E41892B02400E3FD92 /* FWKLateralNavigator.xib in Resources */,
 				B0BD1D7A1891B428009FE020 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -250,6 +270,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B094A9E11892B02400E3FD92 /* FWKLateralNavigator.m in Sources */,
 				B0BD1D611891B428009FE020 /* VBAppDelegate.m in Sources */,
 				B0BD1D671891B428009FE020 /* VBViewController.m in Sources */,
 				B0BD1D5D1891B428009FE020 /* main.m in Sources */,
@@ -260,6 +281,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B094A9E21892B02400E3FD92 /* FWKLateralNavigator.m in Sources */,
 				B0BD1D7C1891B428009FE020 /* MassiveOctoNinjaTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -463,6 +485,7 @@
 				B0BD1D811891B428009FE020 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B0BD1D821891B428009FE020 /* Build configuration list for PBXNativeTarget "MassiveOctoNinjaTests" */ = {
 			isa = XCConfigurationList;
@@ -471,6 +494,7 @@
 				B0BD1D841891B428009FE020 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
