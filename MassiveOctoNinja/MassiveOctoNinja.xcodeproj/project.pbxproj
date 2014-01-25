@@ -11,6 +11,9 @@
 		B094A9E21892B02400E3FD92 /* FWKLateralNavigator.m in Sources */ = {isa = PBXBuildFile; fileRef = B094A9DF1892B02400E3FD92 /* FWKLateralNavigator.m */; };
 		B094A9E31892B02400E3FD92 /* FWKLateralNavigator.xib in Resources */ = {isa = PBXBuildFile; fileRef = B094A9E01892B02400E3FD92 /* FWKLateralNavigator.xib */; };
 		B094A9E41892B02400E3FD92 /* FWKLateralNavigator.xib in Resources */ = {isa = PBXBuildFile; fileRef = B094A9E01892B02400E3FD92 /* FWKLateralNavigator.xib */; };
+		B0A2DD591893FA5400300981 /* VBLateralViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0A2DD571893FA5400300981 /* VBLateralViewController.m */; };
+		B0A2DD5A1893FA5400300981 /* VBLateralViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0A2DD581893FA5400300981 /* VBLateralViewController.xib */; };
+		B0A2DD621894616800300981 /* FWKLateralNavigatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B0A2DD611894616800300981 /* FWKLateralNavigatorTests.m */; };
 		B0BD1D511891B428009FE020 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0BD1D501891B428009FE020 /* Foundation.framework */; };
 		B0BD1D531891B428009FE020 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0BD1D521891B428009FE020 /* CoreGraphics.framework */; };
 		B0BD1D551891B428009FE020 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0BD1D541891B428009FE020 /* UIKit.framework */; };
@@ -41,6 +44,13 @@
 		B094A9DE1892B02400E3FD92 /* FWKLateralNavigator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FWKLateralNavigator.h; sourceTree = "<group>"; };
 		B094A9DF1892B02400E3FD92 /* FWKLateralNavigator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FWKLateralNavigator.m; sourceTree = "<group>"; };
 		B094A9E01892B02400E3FD92 /* FWKLateralNavigator.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FWKLateralNavigator.xib; sourceTree = "<group>"; };
+		B0A2DD561893FA5400300981 /* VBLateralViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VBLateralViewController.h; sourceTree = "<group>"; };
+		B0A2DD571893FA5400300981 /* VBLateralViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VBLateralViewController.m; sourceTree = "<group>"; };
+		B0A2DD581893FA5400300981 /* VBLateralViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VBLateralViewController.xib; sourceTree = "<group>"; };
+		B0A2DD5E18945EB400300981 /* FWKLateralReusableController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FWKLateralReusableController.h; sourceTree = "<group>"; };
+		B0A2DD5F18945F3100300981 /* FWKLateralNavigatorDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FWKLateralNavigatorDataSource.h; sourceTree = "<group>"; };
+		B0A2DD601894610700300981 /* FWKLateralNavigator_Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FWKLateralNavigator_Private.h; sourceTree = "<group>"; };
+		B0A2DD611894616800300981 /* FWKLateralNavigatorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FWKLateralNavigatorTests.m; sourceTree = "<group>"; };
 		B0BD1D4D1891B428009FE020 /* MassiveOctoNinja.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MassiveOctoNinja.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0BD1D501891B428009FE020 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B0BD1D521891B428009FE020 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -89,9 +99,12 @@
 		B094A9DD18927E3000E3FD92 /* Lateral Navigator */ = {
 			isa = PBXGroup;
 			children = (
+				B0A2DD5F18945F3100300981 /* FWKLateralNavigatorDataSource.h */,
 				B094A9DE1892B02400E3FD92 /* FWKLateralNavigator.h */,
 				B094A9DF1892B02400E3FD92 /* FWKLateralNavigator.m */,
 				B094A9E01892B02400E3FD92 /* FWKLateralNavigator.xib */,
+				B0A2DD5E18945EB400300981 /* FWKLateralReusableController.h */,
+				B0A2DD601894610700300981 /* FWKLateralNavigator_Private.h */,
 			);
 			name = "Lateral Navigator";
 			sourceTree = "<group>";
@@ -132,6 +145,9 @@
 				B094A9DD18927E3000E3FD92 /* Lateral Navigator */,
 				B0BD1D5F1891B428009FE020 /* VBAppDelegate.h */,
 				B0BD1D601891B428009FE020 /* VBAppDelegate.m */,
+				B0A2DD561893FA5400300981 /* VBLateralViewController.h */,
+				B0A2DD571893FA5400300981 /* VBLateralViewController.m */,
+				B0A2DD581893FA5400300981 /* VBLateralViewController.xib */,
 				B0BD1D621891B428009FE020 /* Main.storyboard */,
 				B0BD1D651891B428009FE020 /* VBViewController.h */,
 				B0BD1D661891B428009FE020 /* VBViewController.m */,
@@ -155,6 +171,7 @@
 		B0BD1D751891B428009FE020 /* MassiveOctoNinjaTests */ = {
 			isa = PBXGroup;
 			children = (
+				B0A2DD611894616800300981 /* FWKLateralNavigatorTests.m */,
 				B0BD1D7B1891B428009FE020 /* MassiveOctoNinjaTests.m */,
 				B0BD1D761891B428009FE020 /* Supporting Files */,
 			);
@@ -251,6 +268,7 @@
 				B0BD1D691891B428009FE020 /* Images.xcassets in Resources */,
 				B0BD1D5B1891B428009FE020 /* InfoPlist.strings in Resources */,
 				B0BD1D641891B428009FE020 /* Main.storyboard in Resources */,
+				B0A2DD5A1893FA5400300981 /* VBLateralViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,6 +291,7 @@
 				B094A9E11892B02400E3FD92 /* FWKLateralNavigator.m in Sources */,
 				B0BD1D611891B428009FE020 /* VBAppDelegate.m in Sources */,
 				B0BD1D671891B428009FE020 /* VBViewController.m in Sources */,
+				B0A2DD591893FA5400300981 /* VBLateralViewController.m in Sources */,
 				B0BD1D5D1891B428009FE020 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -283,6 +302,7 @@
 			files = (
 				B094A9E21892B02400E3FD92 /* FWKLateralNavigator.m in Sources */,
 				B0BD1D7C1891B428009FE020 /* MassiveOctoNinjaTests.m in Sources */,
+				B0A2DD621894616800300981 /* FWKLateralNavigatorTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

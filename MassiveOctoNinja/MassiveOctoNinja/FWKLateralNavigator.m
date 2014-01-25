@@ -6,11 +6,7 @@
 //  Copyright (c) 2014 Ariel Rodriguez. All rights reserved.
 //
 
-#import "FWKLateralNavigator.h"
-
-@interface FWKLateralNavigator ()
-
-@end
+#import "FWKLateralNavigator_Private.h"
 
 @implementation FWKLateralNavigator
 
@@ -32,8 +28,12 @@
 
 - (void)viewDidLoad
 {
+    
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+
+    NSObject <FWKLateralNavigatorDataSource> *dataSource = [self dataSource];
+    [self setNumberOfItems:[dataSource numberOfItemsInLateralNavigator:self]];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -42,4 +42,32 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)didMoveToParentViewController:(UIViewController *)parent
+{
+    
+    [super didMoveToParentViewController:parent];
+    
+    if ( parent != nil ) {
+        
+        [self setParentNavigationController:[parent navigationController]];
+        
+    }
+    
+}
+
+- (void)registerClass:(Class)controllerClass forControllerWithIdentifier:(NSString *)identifier
+{
+    
+    
+    
+}
+
+- (IBAction)previousButtonTapped:(id)sender
+{
+}
+
+- (IBAction)nextButtonTapped:(id)sender
+{
+    
+}
 @end

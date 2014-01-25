@@ -21,9 +21,17 @@
                         <constraint firstAttribute="height" constant="44" id="iT1-Ia-9Dm"/>
                     </constraints>
                     <items>
-                        <barButtonItem title="&lt;" id="K2Z-R5-KAo"/>
+                        <barButtonItem title="&lt;" id="K2Z-R5-KAo">
+                            <connections>
+                                <action selector="previousButtonTapped:" destination="-1" id="0eH-Zz-6I7"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="Kd3-tz-NqT"/>
-                        <barButtonItem title=">" id="2W8-iG-4Lk"/>
+                        <barButtonItem title=">" id="2W8-iG-4Lk">
+                            <connections>
+                                <action selector="nextButtonTapped:" destination="-1" id="tkn-Cr-SDu"/>
+                            </connections>
+                        </barButtonItem>
                     </items>
                     <color key="barTintColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                 </toolbar>

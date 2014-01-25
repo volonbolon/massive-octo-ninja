@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FWKLateralNavigator : UIViewController
+@protocol FWKLateralNavigatorDataSource;
 
+@interface FWKLateralNavigator : UIViewController
+@property (nonatomic, weak) NSObject<FWKLateralNavigatorDataSource> *dataSource;
+
+- (void)registerClass:(Class)controllerClass forControllerWithIdentifier:(NSString *)identifier;
 @end
