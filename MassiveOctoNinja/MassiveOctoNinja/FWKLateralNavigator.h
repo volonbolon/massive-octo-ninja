@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol FWKLateralReusableController;
 @protocol FWKLateralNavigatorDataSource;
 
 @interface FWKLateralNavigator : UIViewController
 @property (nonatomic, weak) NSObject<FWKLateralNavigatorDataSource> *dataSource;
 
 - (void)registerClass:(Class)controllerClass forControllerWithIdentifier:(NSString *)identifier;
+- (UIViewController <FWKLateralReusableController>*)dequeueReusableControllerWithIdentifier:(NSString *)identifier;
 @end

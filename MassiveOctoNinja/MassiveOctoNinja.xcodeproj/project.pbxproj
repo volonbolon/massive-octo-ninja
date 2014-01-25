@@ -28,6 +28,9 @@
 		B0BD1D711891B428009FE020 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0BD1D501891B428009FE020 /* Foundation.framework */; };
 		B0BD1D721891B428009FE020 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0BD1D541891B428009FE020 /* UIKit.framework */; };
 		B0BD1D7A1891B428009FE020 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B0BD1D781891B428009FE020 /* InfoPlist.strings */; };
+		B0CA9EA11894781900E49984 /* FWKReusableCacheInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = B0CA9EA01894781900E49984 /* FWKReusableCacheInformation.m */; };
+		B0CA9EA21894781900E49984 /* FWKReusableCacheInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = B0CA9EA01894781900E49984 /* FWKReusableCacheInformation.m */; };
+		B0CA9EA318947CF000E49984 /* VBLateralViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0A2DD571893FA5400300981 /* VBLateralViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +91,8 @@
 		B0BD1D6F1891B428009FE020 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		B0BD1D771891B428009FE020 /* MassiveOctoNinjaTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MassiveOctoNinjaTests-Info.plist"; sourceTree = "<group>"; };
 		B0BD1D791891B428009FE020 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B0CA9E9F1894781900E49984 /* FWKReusableCacheInformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FWKReusableCacheInformation.h; sourceTree = "<group>"; };
+		B0CA9EA01894781900E49984 /* FWKReusableCacheInformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FWKReusableCacheInformation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +129,8 @@
 				B094A9E01892B02400E3FD92 /* FWKLateralNavigator.xib */,
 				B0A2DD5E18945EB400300981 /* FWKLateralReusableController.h */,
 				B0A2DD601894610700300981 /* FWKLateralNavigator_Private.h */,
+				B0CA9E9F1894781900E49984 /* FWKReusableCacheInformation.h */,
+				B0CA9EA01894781900E49984 /* FWKReusableCacheInformation.m */,
 			);
 			name = "Lateral Navigator";
 			sourceTree = "<group>";
@@ -362,6 +369,7 @@
 				B094A9E11892B02400E3FD92 /* FWKLateralNavigator.m in Sources */,
 				B0BD1D611891B428009FE020 /* VBAppDelegate.m in Sources */,
 				B0BD1D671891B428009FE020 /* VBViewController.m in Sources */,
+				B0CA9EA11894781900E49984 /* FWKReusableCacheInformation.m in Sources */,
 				B0A2DD591893FA5400300981 /* VBLateralViewController.m in Sources */,
 				B0BD1D5D1891B428009FE020 /* main.m in Sources */,
 			);
@@ -371,6 +379,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0CA9EA318947CF000E49984 /* VBLateralViewController.m in Sources */,
+				B0CA9EA21894781900E49984 /* FWKReusableCacheInformation.m in Sources */,
 				B094A9E21892B02400E3FD92 /* FWKLateralNavigator.m in Sources */,
 				B0A2DD621894616800300981 /* FWKLateralNavigatorTests.m in Sources */,
 			);

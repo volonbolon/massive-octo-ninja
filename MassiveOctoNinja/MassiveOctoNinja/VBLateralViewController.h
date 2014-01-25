@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FWKLateralReusableController.h"
 
-@interface VBLateralViewController : UIViewController
-
+@interface VBLateralViewController : UIViewController <FWKLateralReusableController>
+@property (nonatomic, strong) NSString *identifier;
 @end

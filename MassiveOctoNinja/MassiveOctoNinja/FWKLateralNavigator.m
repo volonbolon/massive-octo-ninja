@@ -7,6 +7,8 @@
 //
 
 #import "FWKLateralNavigator_Private.h"
+#import "FWKLateralReusableController.h"
+#import "FWKReusableCacheInformation.h"
 
 @implementation FWKLateralNavigator
 
@@ -59,8 +61,55 @@
 - (void)registerClass:(Class)controllerClass forControllerWithIdentifier:(NSString *)identifier
 {
     
-    [[self cache] setObject:[NSSet set]
+    FWKReusableCacheInformation *rci = [FWKReusableCacheInformation new];
+    [rci setControllerClass:controllerClass];
+    [rci setCache:[NSMutableArray array]];
+    
+    [[self cache] setObject:rci
                      forKey:identifier];
+    
+}
+
+- (UIViewController <FWKLateralReusableController>*)dequeueReusableControllerWithIdentifier:(NSString *)identifier
+{
+    
+    FWKReusableCacheInformation *reusableInformation = [[self cache] objectForKey:identifier];
+    
+    if ( reusableInformation == nil ) {
+        
+        [NSException raise:NSLocalizedString(@"Invalid Identifier", @"Title for exception throwed if no class has been registered for the identifier")
+                    format:NSLocalizedString(@"No class has been registered", @"Message for exception throwed if no class has been registered for the identifier")];
+        
+    }
+    
+    NSMutableArray *cache = [reusableInformation cache];
+    UIViewController *reusableViewController = nil;
+    if ( [reusableInformation cacheIsReady] ) {
+        
+        reusableInformation = [cache lastObject];
+        [cache removeLastObject];
+        
+    } else {
+        
+        Class controllerClass = [reusableInformation controllerClass];
+        
+        reusableViewController = [(UIViewController *)[controllerClass alloc] initWithNibName:NSStringFromClass(controllerClass)
+                                                                                       bundle:nil];
+        
+        if ( [reusableViewController conformsToProtocol:@protocol(FWKLateralReusableController)] ) {
+            
+            [cache addObject:reusableViewController];
+            
+        } else {
+            
+            reusableViewController = nil;
+            
+        }
+
+        
+    }
+    
+    return (UIViewController<FWKLateralReusableController>*)reusableViewController;
     
 }
 
