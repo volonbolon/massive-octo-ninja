@@ -13,5 +13,5 @@
 @property (nonatomic, strong) NSString *identifier;
 
 @required
-- (void)refreshContent;
+- (void)prepareForReuse;
 @end
