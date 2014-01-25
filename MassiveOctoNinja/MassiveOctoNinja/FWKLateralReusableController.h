@@ -10,5 +10,8 @@
 
 @protocol FWKLateralReusableController <NSObject>
 @required
+@property (nonatomic, strong) NSString *identifier;
+
+@required
 - (void)refreshContent;
 @end
