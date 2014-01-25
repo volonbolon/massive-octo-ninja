@@ -14,6 +14,7 @@
 		B0A2DD591893FA5400300981 /* VBLateralViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0A2DD571893FA5400300981 /* VBLateralViewController.m */; };
 		B0A2DD5A1893FA5400300981 /* VBLateralViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0A2DD581893FA5400300981 /* VBLateralViewController.xib */; };
 		B0A2DD621894616800300981 /* FWKLateralNavigatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B0A2DD611894616800300981 /* FWKLateralNavigatorTests.m */; };
+		B0A2DD7A189462F600300981 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B0A2DD79189462F600300981 /* libOCMock.a */; };
 		B0BD1D511891B428009FE020 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0BD1D501891B428009FE020 /* Foundation.framework */; };
 		B0BD1D531891B428009FE020 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0BD1D521891B428009FE020 /* CoreGraphics.framework */; };
 		B0BD1D551891B428009FE020 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0BD1D541891B428009FE020 /* UIKit.framework */; };
@@ -27,7 +28,6 @@
 		B0BD1D711891B428009FE020 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0BD1D501891B428009FE020 /* Foundation.framework */; };
 		B0BD1D721891B428009FE020 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0BD1D541891B428009FE020 /* UIKit.framework */; };
 		B0BD1D7A1891B428009FE020 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B0BD1D781891B428009FE020 /* InfoPlist.strings */; };
-		B0BD1D7C1891B428009FE020 /* MassiveOctoNinjaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B0BD1D7B1891B428009FE020 /* MassiveOctoNinjaTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +51,25 @@
 		B0A2DD5F18945F3100300981 /* FWKLateralNavigatorDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FWKLateralNavigatorDataSource.h; sourceTree = "<group>"; };
 		B0A2DD601894610700300981 /* FWKLateralNavigator_Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FWKLateralNavigator_Private.h; sourceTree = "<group>"; };
 		B0A2DD611894616800300981 /* FWKLateralNavigatorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FWKLateralNavigatorTests.m; sourceTree = "<group>"; };
+		B0A2DD66189462F600300981 /* NSNotificationCenter+OCMAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNotificationCenter+OCMAdditions.h"; sourceTree = "<group>"; };
+		B0A2DD67189462F600300981 /* OCMArg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMArg.h; sourceTree = "<group>"; };
+		B0A2DD68189462F600300981 /* OCMConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMConstraint.h; sourceTree = "<group>"; };
+		B0A2DD69189462F600300981 /* OCMock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMock.h; sourceTree = "<group>"; };
+		B0A2DD6A189462F600300981 /* OCMockObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMockObject.h; sourceTree = "<group>"; };
+		B0A2DD6B189462F600300981 /* OCMockRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMockRecorder.h; sourceTree = "<group>"; };
+		B0A2DD6D189462F600300981 /* NSNotificationCenter+OCMAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNotificationCenter+OCMAdditions.h"; sourceTree = "<group>"; };
+		B0A2DD6E189462F600300981 /* OCMArg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMArg.h; sourceTree = "<group>"; };
+		B0A2DD6F189462F600300981 /* OCMConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMConstraint.h; sourceTree = "<group>"; };
+		B0A2DD70189462F600300981 /* OCMock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMock.h; sourceTree = "<group>"; };
+		B0A2DD71189462F600300981 /* OCMockObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMockObject.h; sourceTree = "<group>"; };
+		B0A2DD72189462F600300981 /* OCMockRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMockRecorder.h; sourceTree = "<group>"; };
+		B0A2DD73189462F600300981 /* NSNotificationCenter+OCMAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSNotificationCenter+OCMAdditions.h"; path = "libraries/OCMock/Headers/OCMock/NSNotificationCenter+OCMAdditions.h"; sourceTree = "<group>"; };
+		B0A2DD74189462F600300981 /* OCMArg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OCMArg.h; path = libraries/OCMock/Headers/OCMock/OCMArg.h; sourceTree = "<group>"; };
+		B0A2DD75189462F600300981 /* OCMConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OCMConstraint.h; path = libraries/OCMock/Headers/OCMock/OCMConstraint.h; sourceTree = "<group>"; };
+		B0A2DD76189462F600300981 /* OCMock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OCMock.h; path = libraries/OCMock/Headers/OCMock/OCMock.h; sourceTree = "<group>"; };
+		B0A2DD77189462F600300981 /* OCMockObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OCMockObject.h; path = libraries/OCMock/Headers/OCMock/OCMockObject.h; sourceTree = "<group>"; };
+		B0A2DD78189462F600300981 /* OCMockRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OCMockRecorder.h; path = libraries/OCMock/Headers/OCMock/OCMockRecorder.h; sourceTree = "<group>"; };
+		B0A2DD79189462F600300981 /* libOCMock.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libOCMock.a; path = libraries/OCMock/libOCMock.a; sourceTree = "<group>"; };
 		B0BD1D4D1891B428009FE020 /* MassiveOctoNinja.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MassiveOctoNinja.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0BD1D501891B428009FE020 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B0BD1D521891B428009FE020 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -69,7 +88,6 @@
 		B0BD1D6F1891B428009FE020 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		B0BD1D771891B428009FE020 /* MassiveOctoNinjaTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MassiveOctoNinjaTests-Info.plist"; sourceTree = "<group>"; };
 		B0BD1D791891B428009FE020 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		B0BD1D7B1891B428009FE020 /* MassiveOctoNinjaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MassiveOctoNinjaTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +106,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0BD1D701891B428009FE020 /* XCTest.framework in Frameworks */,
+				B0A2DD7A189462F600300981 /* libOCMock.a in Frameworks */,
 				B0BD1D721891B428009FE020 /* UIKit.framework in Frameworks */,
 				B0BD1D711891B428009FE020 /* Foundation.framework in Frameworks */,
 			);
@@ -107,6 +126,58 @@
 				B0A2DD601894610700300981 /* FWKLateralNavigator_Private.h */,
 			);
 			name = "Lateral Navigator";
+			sourceTree = "<group>";
+		};
+		B0A2DD63189462D700300981 /* OCMock */ = {
+			isa = PBXGroup;
+			children = (
+				B0A2DD64189462F600300981 /* Headers */,
+				B0A2DD6C189462F600300981 /* OCMock */,
+				B0A2DD73189462F600300981 /* NSNotificationCenter+OCMAdditions.h */,
+				B0A2DD74189462F600300981 /* OCMArg.h */,
+				B0A2DD75189462F600300981 /* OCMConstraint.h */,
+				B0A2DD76189462F600300981 /* OCMock.h */,
+				B0A2DD77189462F600300981 /* OCMockObject.h */,
+				B0A2DD78189462F600300981 /* OCMockRecorder.h */,
+				B0A2DD79189462F600300981 /* libOCMock.a */,
+			);
+			name = OCMock;
+			sourceTree = "<group>";
+		};
+		B0A2DD64189462F600300981 /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				B0A2DD65189462F600300981 /* OCMock */,
+			);
+			name = Headers;
+			path = libraries/OCMock/Headers;
+			sourceTree = "<group>";
+		};
+		B0A2DD65189462F600300981 /* OCMock */ = {
+			isa = PBXGroup;
+			children = (
+				B0A2DD66189462F600300981 /* NSNotificationCenter+OCMAdditions.h */,
+				B0A2DD67189462F600300981 /* OCMArg.h */,
+				B0A2DD68189462F600300981 /* OCMConstraint.h */,
+				B0A2DD69189462F600300981 /* OCMock.h */,
+				B0A2DD6A189462F600300981 /* OCMockObject.h */,
+				B0A2DD6B189462F600300981 /* OCMockRecorder.h */,
+			);
+			path = OCMock;
+			sourceTree = "<group>";
+		};
+		B0A2DD6C189462F600300981 /* OCMock */ = {
+			isa = PBXGroup;
+			children = (
+				B0A2DD6D189462F600300981 /* NSNotificationCenter+OCMAdditions.h */,
+				B0A2DD6E189462F600300981 /* OCMArg.h */,
+				B0A2DD6F189462F600300981 /* OCMConstraint.h */,
+				B0A2DD70189462F600300981 /* OCMock.h */,
+				B0A2DD71189462F600300981 /* OCMockObject.h */,
+				B0A2DD72189462F600300981 /* OCMockRecorder.h */,
+			);
+			name = OCMock;
+			path = libraries/OCMock/Headers/OCMock;
 			sourceTree = "<group>";
 		};
 		B0BD1D441891B428009FE020 = {
@@ -131,6 +202,7 @@
 		B0BD1D4F1891B428009FE020 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B0A2DD63189462D700300981 /* OCMock */,
 				B0BD1D501891B428009FE020 /* Foundation.framework */,
 				B0BD1D521891B428009FE020 /* CoreGraphics.framework */,
 				B0BD1D541891B428009FE020 /* UIKit.framework */,
@@ -172,7 +244,6 @@
 			isa = PBXGroup;
 			children = (
 				B0A2DD611894616800300981 /* FWKLateralNavigatorTests.m */,
-				B0BD1D7B1891B428009FE020 /* MassiveOctoNinjaTests.m */,
 				B0BD1D761891B428009FE020 /* Supporting Files */,
 			);
 			path = MassiveOctoNinjaTests;
@@ -301,7 +372,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B094A9E21892B02400E3FD92 /* FWKLateralNavigator.m in Sources */,
-				B0BD1D7C1891B428009FE020 /* MassiveOctoNinjaTests.m in Sources */,
 				B0A2DD621894616800300981 /* FWKLateralNavigatorTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -460,7 +530,23 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(PROJECT_DIR)/libraries/**",
+				);
 				INFOPLIST_FILE = "MassiveOctoNinjaTests/MassiveOctoNinjaTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/ariel/Apps/massive-octo-ninja/MassiveOctoNinja/libraries/OCMock",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					XCTest,
+					"-force_load",
+					"$(PROJECT_DIR)/Libraries/OCMock/libOCMock.a",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -479,7 +565,23 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MassiveOctoNinja/MassiveOctoNinja-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(PROJECT_DIR)/libraries/**",
+				);
 				INFOPLIST_FILE = "MassiveOctoNinjaTests/MassiveOctoNinjaTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/ariel/Apps/massive-octo-ninja/MassiveOctoNinja/libraries/OCMock",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					XCTest,
+					"-force_load",
+					"$(PROJECT_DIR)/Libraries/OCMock/libOCMock.a",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;

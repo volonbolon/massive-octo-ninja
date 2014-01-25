@@ -9,6 +9,9 @@
 #import <XCTest/XCTest.h>
 #import "FWKLateralNavigator.h"
 #import "FWKLateralNavigator_Private.h"
+#import "FWKLateralNavigatorDataSource.h"
+
+#import <OCMock/OCMock.h>
 
 @interface FWKLateralNavigatorTests : XCTestCase
 
@@ -28,9 +31,32 @@
     [super tearDown];
 }
 
-- (void)testExample
+- (void)testOCMockPass
 {
-    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+    id mock = [OCMockObject mockForClass:NSString.class];
+    [[[mock stub] andReturn:@"mocktest"] lowercaseString];
+    
+    NSString *returnValue = [mock lowercaseString];
+    XCTAssertEqualObjects(@"mocktest", returnValue, @"Should have returned the expected string.");
+    
+}
+
+- (void)testViewDidLoad
+{
+    
+    FWKLateralNavigator *navigator = [FWKLateralNavigator new];
+    id navigatorDataSourceMock = [OCMockObject mockForProtocol:@protocol(FWKLateralNavigatorDataSource)];
+    
+    [[[navigatorDataSourceMock expect] andReturnValue:[NSNumber numberWithUnsignedInteger:3]] numberOfItemsInLateralNavigator:[OCMArg isNotNil]];
+    
+    [navigator setDataSource:navigatorDataSourceMock];
+    
+    [navigator viewDidLoad];
+    
+    XCTAssertTrue([navigator numberOfItems]==3, @"number of items (%d) should be 3", [navigator numberOfItems]);
+    
+    [navigatorDataSourceMock verify];
+    
 }
 
 @end

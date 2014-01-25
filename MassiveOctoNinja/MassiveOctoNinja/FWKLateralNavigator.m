@@ -32,7 +32,8 @@
     [super viewDidLoad];
 
     NSObject <FWKLateralNavigatorDataSource> *dataSource = [self dataSource];
-    [self setNumberOfItems:[dataSource numberOfItemsInLateralNavigator:self]];
+    NSUInteger numberOfItems = [dataSource numberOfItemsInLateralNavigator:self];
+    [self setNumberOfItems:numberOfItems];
     
 }
 

@@ -7,7 +7,7 @@
 //
 
 #import "VBViewController.h"
-
+#import "FWKLateralNavigator.h"
 
 @interface VBViewController ()
 
@@ -68,6 +68,22 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - FWKLateralNavigatorDataSource
+- (NSInteger)numberOfItemsInLateralNavigator:(FWKLateralNavigator *)lateralNavigator
+{
+    
+    return 3;
+    
+}
+
+- (UIViewController <FWKLateralReusableController> *)lateralNavigator:(FWKLateralNavigator *)lateralNavigator
+                                               viewControllerForIndex:(NSUInteger)index
+{
+    
+    return nil;
+    
 }
 
 @end

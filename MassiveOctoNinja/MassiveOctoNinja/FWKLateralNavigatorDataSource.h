@@ -15,5 +15,5 @@
 @required
 - (UIViewController <FWKLateralReusableController> *)lateralNavigator:(FWKLateralNavigator *)lateralNavigator
                                                viewControllerForIndex:(NSUInteger)index;
-- (NSUInteger)numberOfItemsInLateralNavigator:(FWKLateralNavigator *)lateralNavigator;
+- (NSInteger)numberOfItemsInLateralNavigator:(FWKLateralNavigator *)lateralNavigator;
 @end

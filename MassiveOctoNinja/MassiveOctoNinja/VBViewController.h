@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "FWKLateralNavigator.h"
+#import "FWKLateralNavigatorDataSource.h"
 
 @interface VBViewController : UIViewController <FWKLateralNavigatorDataSource>
 
