@@ -13,6 +13,7 @@
 @interface FWKLateralNavigator ()
 @property (nonatomic, strong) UINavigationController *parentNavigationController;
 @property (nonatomic, assign) NSUInteger numberOfItems;
+@property (nonatomic, strong) NSMutableDictionary *cache;
 
 - (IBAction)previousButtonTapped:(id)sender;
 - (IBAction)nextButtonTapped:(id)sender;

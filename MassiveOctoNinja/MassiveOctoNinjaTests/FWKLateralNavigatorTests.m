@@ -59,4 +59,18 @@
     
 }
 
+- (void)testRegisterClass
+{
+    
+    FWKLateralNavigator *navigator = [FWKLateralNavigator new];
+    
+    XCTAssertTrue([[[navigator cache] allKeys] count]==0, @"cache should be nil");
+    
+    [navigator registerClass:[UIViewController class]
+ forControllerWithIdentifier:@"someIdentifier"];
+    
+    XCTAssertTrue([[[navigator cache] allKeys] count]==1, @"cache should countains 1 element");
+    
+}
+
 @end

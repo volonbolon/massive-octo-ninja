@@ -18,7 +18,7 @@
     
     if ( self != nil ) {
         
-        
+        _cache = [NSMutableDictionary new];
         
     }
     
@@ -59,7 +59,8 @@
 - (void)registerClass:(Class)controllerClass forControllerWithIdentifier:(NSString *)identifier
 {
     
-    
+    [[self cache] setObject:[NSSet set]
+                     forKey:identifier];
     
 }
 
