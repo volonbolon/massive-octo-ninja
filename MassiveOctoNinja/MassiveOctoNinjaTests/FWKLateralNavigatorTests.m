@@ -126,11 +126,11 @@
     
     FWKReusableCacheInformation *rci = [[navigator cache] objectForKey:identifier];
     
-    XCTAssertTrue([[rci cache] count]==2, @"There should be two element in the vc cache, (%d) found", [[rci cache] count]);
+    UIViewController *firstElement = [[rci cache] firstObject];
     
     [navigator dequeueReusableControllerWithIdentifier:identifier];
     
-    XCTAssertTrue([[rci cache] count]==3, @"There should be three element in the vc cache, (%d) found", [[rci cache] count]);
+    XCTAssertTrue([firstElement isEqual:[[rci cache] lastObject]], @"first element should be send to last position after dequeuing");
     
 }
 
