@@ -41,6 +41,8 @@
     
     if ( numberOfItems > 0 ) {
         
+        [[self previousButton] setEnabled:NO];
+        
         UIViewController *childViewController = [dataSource lateralNavigator:self
                                                       viewControllerForIndex:0];
         
@@ -103,9 +105,9 @@
         
     } else {
         
-//        Class controllerClass = [reusableInformation controllerClass];
+        Class controllerClass = [reusableInformation controllerClass];
         
-        reusableViewController = [(UIViewController *)[controllerClass alloc] initWithNibName:[VB]
+        reusableViewController = [(UIViewController *)[controllerClass alloc] initWithNibName:NSStringFromClass(controllerClass)
                                                                                        bundle:nil];
         
         if ( [reusableViewController conformsToProtocol:@protocol(FWKLateralReusableController)] ) {
@@ -203,7 +205,7 @@
     [self transitionFromViewController:fromViewController
                       toViewController:toViewController
                               duration:.25
-                               options:UIViewAnimationOptionTransitionCrossDissolve
+                               options:UIViewAnimationOptionTransitionNone
                             animations:NULL
                             completion:^(BOOL finished) {
                                 
@@ -211,6 +213,7 @@
                                     
                                     [toViewController didMoveToParentViewController:self];
                                     [fromViewController removeFromParentViewController];
+                                    [[fromViewController view] removeFromSuperview];
                                     
                                 }
                                 
