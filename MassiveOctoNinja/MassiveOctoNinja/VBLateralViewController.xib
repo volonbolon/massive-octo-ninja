@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VBLateralViewController">
             <connections>
+                <outlet property="label" destination="lmY-1s-q1O" id="CoS-hH-SUY"/>
                 <outlet property="view" destination="2" id="3"/>
             </connections>
         </placeholder>

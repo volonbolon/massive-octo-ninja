@@ -10,5 +10,6 @@
 #import "FWKLateralReusableController.h"
 
 @interface VBLateralViewController : UIViewController <FWKLateralReusableController>
+@property (weak, nonatomic) IBOutlet UILabel *label;
 @property (nonatomic, strong) NSString *identifier;
 @end
