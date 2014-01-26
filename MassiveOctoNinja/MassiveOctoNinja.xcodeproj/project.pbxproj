@@ -31,6 +31,10 @@
 		B0CA9EA11894781900E49984 /* FWKReusableCacheInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = B0CA9EA01894781900E49984 /* FWKReusableCacheInformation.m */; };
 		B0CA9EA21894781900E49984 /* FWKReusableCacheInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = B0CA9EA01894781900E49984 /* FWKReusableCacheInformation.m */; };
 		B0CA9EA318947CF000E49984 /* VBLateralViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0A2DD571893FA5400300981 /* VBLateralViewController.m */; };
+		B0CA9EA618948B2500E49984 /* UIColor+RandomColor.m in Sources */ = {isa = PBXBuildFile; fileRef = B0CA9EA518948B2500E49984 /* UIColor+RandomColor.m */; };
+		B0CA9EA718948B2500E49984 /* UIColor+RandomColor.m in Sources */ = {isa = PBXBuildFile; fileRef = B0CA9EA518948B2500E49984 /* UIColor+RandomColor.m */; };
+		B0CA9EAA18948D2500E49984 /* NSString+RandomString.m in Sources */ = {isa = PBXBuildFile; fileRef = B0CA9EA918948D2500E49984 /* NSString+RandomString.m */; };
+		B0CA9EAB18948D2500E49984 /* NSString+RandomString.m in Sources */ = {isa = PBXBuildFile; fileRef = B0CA9EA918948D2500E49984 /* NSString+RandomString.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +97,10 @@
 		B0BD1D791891B428009FE020 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B0CA9E9F1894781900E49984 /* FWKReusableCacheInformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FWKReusableCacheInformation.h; sourceTree = "<group>"; };
 		B0CA9EA01894781900E49984 /* FWKReusableCacheInformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FWKReusableCacheInformation.m; sourceTree = "<group>"; };
+		B0CA9EA418948B2500E49984 /* UIColor+RandomColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+RandomColor.h"; sourceTree = "<group>"; };
+		B0CA9EA518948B2500E49984 /* UIColor+RandomColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+RandomColor.m"; sourceTree = "<group>"; };
+		B0CA9EA818948D2500E49984 /* NSString+RandomString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+RandomString.h"; sourceTree = "<group>"; };
+		B0CA9EA918948D2500E49984 /* NSString+RandomString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+RandomString.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,6 +240,10 @@
 				B0BD1D661891B428009FE020 /* VBViewController.m */,
 				B0BD1D681891B428009FE020 /* Images.xcassets */,
 				B0BD1D571891B428009FE020 /* Supporting Files */,
+				B0CA9EA418948B2500E49984 /* UIColor+RandomColor.h */,
+				B0CA9EA518948B2500E49984 /* UIColor+RandomColor.m */,
+				B0CA9EA818948D2500E49984 /* NSString+RandomString.h */,
+				B0CA9EA918948D2500E49984 /* NSString+RandomString.m */,
 			);
 			path = MassiveOctoNinja;
 			sourceTree = "<group>";
@@ -370,6 +382,8 @@
 				B0BD1D611891B428009FE020 /* VBAppDelegate.m in Sources */,
 				B0BD1D671891B428009FE020 /* VBViewController.m in Sources */,
 				B0CA9EA11894781900E49984 /* FWKReusableCacheInformation.m in Sources */,
+				B0CA9EA618948B2500E49984 /* UIColor+RandomColor.m in Sources */,
+				B0CA9EAA18948D2500E49984 /* NSString+RandomString.m in Sources */,
 				B0A2DD591893FA5400300981 /* VBLateralViewController.m in Sources */,
 				B0BD1D5D1891B428009FE020 /* main.m in Sources */,
 			);
@@ -380,6 +394,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0CA9EA318947CF000E49984 /* VBLateralViewController.m in Sources */,
+				B0CA9EAB18948D2500E49984 /* NSString+RandomString.m in Sources */,
+				B0CA9EA718948B2500E49984 /* UIColor+RandomColor.m in Sources */,
 				B0CA9EA21894781900E49984 /* FWKReusableCacheInformation.m in Sources */,
 				B094A9E21892B02400E3FD92 /* FWKLateralNavigator.m in Sources */,
 				B0A2DD621894616800300981 /* FWKLateralNavigatorTests.m in Sources */,
