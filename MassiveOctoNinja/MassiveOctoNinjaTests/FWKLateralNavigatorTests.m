@@ -13,6 +13,7 @@
 #import "VBLateralViewController.h"
 #import "FWKReusableCacheInformation.h"
 #import "FWKLateralReusableController.h"
+#import "VBLateralViewController.h"
 
 #import <OCMock/OCMock.h>
 
@@ -48,9 +49,16 @@
 {
     
     FWKLateralNavigator *navigator = [FWKLateralNavigator new];
+    id navigatorPartialMock = [OCMockObject partialMockForObject:navigator];
+    [[navigatorPartialMock expect] loadChildViewController:[OCMArg checkWithBlock:^BOOL(id obj) {
+        return [obj isKindOfClass:[VBLateralViewController class]];
+    }]];
     id navigatorDataSourceMock = [OCMockObject mockForProtocol:@protocol(FWKLateralNavigatorDataSource)];
     
     [[[navigatorDataSourceMock expect] andReturnValue:[NSNumber numberWithUnsignedInteger:3]] numberOfItemsInLateralNavigator:[OCMArg isNotNil]];
+    VBLateralViewController *vc = [[VBLateralViewController alloc] initWithNibName:@"VBLateralViewController"
+                                                                            bundle:nil];
+    [[[navigatorDataSourceMock expect] andReturn:vc] lateralNavigator:[OCMArg isNotNil] viewControllerForIndex:0];
     
     [navigator setDataSource:navigatorDataSourceMock];
     
@@ -59,6 +67,7 @@
     XCTAssertTrue([navigator numberOfItems]==3, @"number of items (%d) should be 3", [navigator numberOfItems]);
     
     [navigatorDataSourceMock verify];
+    [navigatorPartialMock verify];
     
 }
 
