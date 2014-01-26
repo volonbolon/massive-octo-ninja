@@ -32,10 +32,12 @@
 {
     
     [super viewDidLoad];
-
+    
     NSObject <FWKLateralNavigatorDataSource> *dataSource = [self dataSource];
     NSUInteger numberOfItems = [dataSource numberOfItemsInLateralNavigator:self];
     [self setNumberOfItems:numberOfItems];
+    
+    [self setCurrentIndex:0];
     
     if ( numberOfItems > 0 ) {
         
@@ -95,14 +97,15 @@
     UIViewController *reusableViewController = nil;
     if ( [reusableInformation cacheIsReady] ) {
         
-        reusableInformation = [cache lastObject];
-        [cache removeLastObject];
+        reusableViewController = [cache firstObject];
+        [cache removeObjectAtIndex:0];
+        [cache addObject:reusableViewController];
         
     } else {
         
-        Class controllerClass = [reusableInformation controllerClass];
+//        Class controllerClass = [reusableInformation controllerClass];
         
-        reusableViewController = [(UIViewController *)[controllerClass alloc] initWithNibName:NSStringFromClass(controllerClass)
+        reusableViewController = [(UIViewController *)[controllerClass alloc] initWithNibName:[VB]
                                                                                        bundle:nil];
         
         if ( [reusableViewController conformsToProtocol:@protocol(FWKLateralReusableController)] ) {
@@ -114,7 +117,7 @@
             reusableViewController = nil;
             
         }
-
+        
         
     }
     
@@ -124,10 +127,50 @@
 
 - (IBAction)previousButtonTapped:(id)sender
 {
+    
+    if ( [self currentIndex] > 0 ) {
+        
+        [self setCurrentIndex:[self currentIndex]-1];
+        
+        UIViewController *childViewController = [[self childViewControllers] firstObject];
+        UIViewController *toViewController = [[self dataSource] lateralNavigator:self
+                                                          viewControllerForIndex:[self currentIndex]];
+        
+        [self flipFromViewController:childViewController
+                toViewViewController:toViewController];
+        
+    }
+    
+    [self toggleButtons];
+    
 }
 
 - (IBAction)nextButtonTapped:(id)sender
 {
+    
+    if ( [self currentIndex]+1 < [self numberOfItems] ) {
+        
+        [self setCurrentIndex:[self currentIndex]+1];
+        
+        UIViewController *childViewController = [[self childViewControllers] firstObject];
+        UIViewController *toViewController = [[self dataSource] lateralNavigator:self
+                                                          viewControllerForIndex:[self currentIndex]];
+        
+        [self flipFromViewController:childViewController
+                toViewViewController:toViewController];
+        
+    }
+    
+    [self toggleButtons];
+    
+}
+
+- (void)toggleButtons
+{
+    
+    [[self previousButton] setEnabled:[self currentIndex]>0];
+    [[self nextButton] setEnabled:[self currentIndex]<([self numberOfItems])-1];
+
     
 }
 
@@ -139,7 +182,84 @@
     
     [self addChildViewController:childViewController];
     [[self controllersContainer] addSubview:[childViewController view]];
+    
+    [self adjustViewControllerConstraints:childViewController];
+    
     [childViewController didMoveToParentViewController:self];
     
 }
+
+- (void)flipFromViewController:(UIViewController *)fromViewController
+          toViewViewController:(UIViewController *)toViewController
+{
+    
+    [[self controllersContainer] addSubview:[toViewController view]];
+
+    [self adjustViewControllerConstraints:toViewController];
+    [self adjustViewControllerConstraints:fromViewController];
+
+    [self addChildViewController:toViewController];
+    
+    [self transitionFromViewController:fromViewController
+                      toViewController:toViewController
+                              duration:.25
+                               options:UIViewAnimationOptionTransitionCrossDissolve
+                            animations:NULL
+                            completion:^(BOOL finished) {
+                                
+                                if ( finished ) {
+                                    
+                                    [toViewController didMoveToParentViewController:self];
+                                    [fromViewController removeFromParentViewController];
+                                    
+                                }
+                                
+                            }];
+    
+}
+
+- (void)adjustViewControllerConstraints:(UIViewController *)viewController
+{
+    
+    UIView *viewControllerView = [viewController view];
+    [viewControllerView setTranslatesAutoresizingMaskIntoConstraints:NO];
+    
+    UIView *superView = [self controllersContainer];
+    
+    [viewControllerView removeConstraints:[viewControllerView constraints]];
+    
+    NSLayoutConstraint *topConstraint = [NSLayoutConstraint constraintWithItem:viewControllerView
+                                                                     attribute:NSLayoutAttributeTop
+                                                                     relatedBy:NSLayoutRelationEqual
+                                                                        toItem:superView
+                                                                     attribute:NSLayoutAttributeTop
+                                                                    multiplier:1.0
+                                                                      constant:0.0];
+    NSLayoutConstraint *bottomConstraint = [NSLayoutConstraint constraintWithItem:viewControllerView
+                                                                        attribute:NSLayoutAttributeBottom
+                                                                        relatedBy:NSLayoutRelationEqual
+                                                                           toItem:superView
+                                                                        attribute:NSLayoutAttributeBottom
+                                                                       multiplier:1.0
+                                                                         constant:0.0];
+    
+    NSLayoutConstraint *leadingConstraint = leadingConstraint = [NSLayoutConstraint constraintWithItem:viewControllerView
+                                                                                             attribute:NSLayoutAttributeLeading
+                                                                                             relatedBy:NSLayoutRelationEqual
+                                                                                                toItem:superView
+                                                                                             attribute:NSLayoutAttributeLeading
+                                                                                            multiplier:1.0
+                                                                                              constant:0.0];;
+    NSLayoutConstraint *trailingConstraint = trailingConstraint = [NSLayoutConstraint constraintWithItem:viewControllerView
+                                                                                               attribute:NSLayoutAttributeTrailing
+                                                                                               relatedBy:NSLayoutRelationEqual
+                                                                                                  toItem:superView
+                                                                                               attribute:NSLayoutAttributeTrailing
+                                                                                              multiplier:1.0
+                                                                                                constant:0.0];
+    
+    [superView addConstraints:@[topConstraint, bottomConstraint, leadingConstraint, trailingConstraint]];
+    
+}
+
 @end

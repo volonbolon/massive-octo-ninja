@@ -7,6 +7,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FWKLateralNavigator">
             <connections>
                 <outlet property="controllersContainer" destination="0eM-IC-mTX" id="ZVo-X5-gNS"/>
+                <outlet property="nextButton" destination="2W8-iG-4Lk" id="4fi-9W-vAm"/>
+                <outlet property="previousButton" destination="K2Z-R5-KAo" id="1if-n4-8qc"/>
                 <outlet property="view" destination="2" id="3"/>
             </connections>
         </placeholder>

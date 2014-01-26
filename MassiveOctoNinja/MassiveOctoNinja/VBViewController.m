@@ -23,7 +23,7 @@ NSString *const kControllerIdentifier = @"identifier";
 {
     
     NSMutableArray *items = [[NSMutableArray alloc] initWithCapacity:10];
-    for ( NSUInteger i = 0; i < 10; i++ ) {
+    for ( NSUInteger i = 0; i < 5; i++ ) {
         
         [items addObject:@{@"color": [UIColor randomColor], @"string":[NSString randomStringWithLength:10]}];
         
