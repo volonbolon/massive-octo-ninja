@@ -37,6 +37,15 @@
     NSUInteger numberOfItems = [dataSource numberOfItemsInLateralNavigator:self];
     [self setNumberOfItems:numberOfItems];
     
+    if ( numberOfItems > 0 ) {
+        
+        UIViewController *childViewController = [dataSource lateralNavigator:self
+                                                      viewControllerForIndex:0];
+        
+        [self loadChildViewController:childViewController];
+        
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -119,6 +128,18 @@
 
 - (IBAction)nextButtonTapped:(id)sender
 {
+    
+}
+
+- (void)loadChildViewController:(UIViewController *
+                                 )childViewController
+{
+    
+    NSParameterAssert(childViewController!=nil);
+    
+    [self addChildViewController:childViewController];
+    [[self controllersContainer] addSubview:[childViewController view]];
+    [childViewController didMoveToParentViewController:self];
     
 }
 @end
