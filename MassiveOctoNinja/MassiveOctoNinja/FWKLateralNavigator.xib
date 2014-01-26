@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FWKLateralNavigator">
             <connections>
+                <outlet property="controllersContainer" destination="0eM-IC-mTX" id="ZVo-X5-gNS"/>
                 <outlet property="view" destination="2" id="3"/>
             </connections>
         </placeholder>
@@ -35,12 +36,21 @@
                     </items>
                     <color key="barTintColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                 </toolbar>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0eM-IC-mTX">
+                    <rect key="frame" x="0.0" y="44" width="768" height="960"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                </view>
             </subviews>
-            <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="Yio-sk-g27" firstAttribute="top" secondItem="2" secondAttribute="top" id="5ga-ms-2YO"/>
                 <constraint firstAttribute="trailing" secondItem="Yio-sk-g27" secondAttribute="trailing" id="5hh-VR-Gcd"/>
+                <constraint firstAttribute="bottom" secondItem="0eM-IC-mTX" secondAttribute="bottom" id="JF0-nz-JZ1"/>
+                <constraint firstAttribute="trailing" secondItem="0eM-IC-mTX" secondAttribute="trailing" id="dbQ-eB-Eza"/>
                 <constraint firstItem="Yio-sk-g27" firstAttribute="leading" secondItem="2" secondAttribute="leading" id="gG5-R7-H64"/>
+                <constraint firstItem="0eM-IC-mTX" firstAttribute="top" secondItem="Yio-sk-g27" secondAttribute="bottom" id="hCu-Cf-De4"/>
+                <constraint firstItem="0eM-IC-mTX" firstAttribute="leading" secondItem="2" secondAttribute="leading" id="zSh-ZK-PPh"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
         </view>

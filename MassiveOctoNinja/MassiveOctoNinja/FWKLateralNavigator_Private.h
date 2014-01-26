@@ -14,8 +14,12 @@
 @property (nonatomic, strong) UINavigationController *parentNavigationController;
 @property (nonatomic, assign) NSUInteger numberOfItems;
 @property (nonatomic, strong) NSMutableDictionary *cache;
+@property (weak, nonatomic) IBOutlet UIView *controllersContainer;
 
 - (IBAction)previousButtonTapped:(id)sender;
 - (IBAction)nextButtonTapped:(id)sender;
+
+- (void)loadChildViewController:(UIViewController *
+                                 )childViewController;
 
 @end
