@@ -46,7 +46,7 @@
         UIViewController *childViewController = [dataSource lateralNavigator:self
                                                       viewControllerForIndex:0];
         
-        [self loadChildViewController:childViewController];
+        [self loadChildViewController:(UIViewController<FWKLateralReusableController>*)childViewController];
         
     }
     
