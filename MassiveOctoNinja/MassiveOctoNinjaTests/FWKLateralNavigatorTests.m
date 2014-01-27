@@ -47,7 +47,6 @@
 
 - (void)testViewDidLoad
 {
-    
     FWKLateralNavigator *navigator = [FWKLateralNavigator new];
     id navigatorPartialMock = [OCMockObject partialMockForObject:navigator];
     [[navigatorPartialMock expect] loadChildViewController:[OCMArg checkWithBlock:^BOOL(id obj) {
