@@ -22,13 +22,12 @@
 - (IBAction)previousButtonTapped:(id)sender;
 - (IBAction)nextButtonTapped:(id)sender;
 
-- (void)loadChildViewController:(UIViewController *
-                                 )childViewController;
+- (void)loadChildViewController:(UIViewController<FWKLateralReusableController>*)childViewController;
 
-- (void)flipFromViewController:(UIViewController *)fromViewController
-          toViewViewController:(UIViewController *)toViewController;
+- (void)flipFromViewController:(UIViewController<FWKLateralReusableController>*)fromViewController
+          toViewViewController:(UIViewController<FWKLateralReusableController>*)toViewController;
 
-- (void)adjustViewControllerConstraints:(UIViewController *)viewController;
+- (void)adjustViewControllerConstraints:(UIViewController<FWKLateralReusableController>*)viewController;
 
 - (void)toggleButtons;
 

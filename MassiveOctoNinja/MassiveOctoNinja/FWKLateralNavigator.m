@@ -107,12 +107,16 @@
         
         Class controllerClass = [reusableInformation controllerClass];
         
-        reusableViewController = [(UIViewController *)[controllerClass alloc] initWithNibName:NSStringFromClass(controllerClass)
+        NSString *stringFromClass = NSStringFromClass(controllerClass);
+        NSString *nibName =  [[NSBundle mainBundle] pathForResource:stringFromClass ofType:@"nib"] == nil ? nil : stringFromClass;
+        
+        reusableViewController = [(UIViewController *)[controllerClass alloc] initWithNibName:nibName
                                                                                        bundle:nil];
         
         if ( [reusableViewController conformsToProtocol:@protocol(FWKLateralReusableController)] ) {
             
             [cache addObject:reusableViewController];
+            [(UIViewController<FWKLateralReusableController>*)reusableViewController setIdentifier:identifier];
             
         } else {
             
@@ -138,8 +142,8 @@
         UIViewController *toViewController = [[self dataSource] lateralNavigator:self
                                                           viewControllerForIndex:[self currentIndex]];
         
-        [self flipFromViewController:childViewController
-                toViewViewController:toViewController];
+        [self flipFromViewController:(UIViewController<FWKLateralReusableController>*)childViewController
+                toViewViewController:(UIViewController<FWKLateralReusableController>*)toViewController];
         
     }
     
@@ -158,8 +162,8 @@
         UIViewController *toViewController = [[self dataSource] lateralNavigator:self
                                                           viewControllerForIndex:[self currentIndex]];
         
-        [self flipFromViewController:childViewController
-                toViewViewController:toViewController];
+        [self flipFromViewController:(UIViewController<FWKLateralReusableController>*)childViewController
+                toViewViewController:(UIViewController<FWKLateralReusableController>*)toViewController];
         
     }
     
@@ -176,13 +180,15 @@
     
 }
 
-- (void)loadChildViewController:(UIViewController *
-                                 )childViewController
+- (void)loadChildViewController:(UIViewController<FWKLateralReusableController>*)childViewController
 {
     
     NSParameterAssert(childViewController!=nil);
     
     [self addChildViewController:childViewController];
+    
+    [childViewController prepareForReuse];
+    
     [[self controllersContainer] addSubview:[childViewController view]];
     
     [self adjustViewControllerConstraints:childViewController];
@@ -197,8 +203,8 @@
     
     [[self controllersContainer] addSubview:[toViewController view]];
 
-    [self adjustViewControllerConstraints:toViewController];
-    [self adjustViewControllerConstraints:fromViewController];
+    [self adjustViewControllerConstraints:(UIViewController<FWKLateralReusableController>*)toViewController];
+    [self adjustViewControllerConstraints:(UIViewController<FWKLateralReusableController>*)fromViewController];
 
     [self addChildViewController:toViewController];
     
