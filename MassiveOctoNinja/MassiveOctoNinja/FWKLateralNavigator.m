@@ -197,10 +197,11 @@
     
 }
 
-- (void)flipFromViewController:(UIViewController *)fromViewController
-          toViewViewController:(UIViewController *)toViewController
+- (void)flipFromViewController:(UIViewController<FWKLateralReusableController>*)fromViewController
+          toViewViewController:(UIViewController<FWKLateralReusableController>*)toViewController
 {
     
+    [toViewController prepareForReuse];
     [[self controllersContainer] addSubview:[toViewController view]];
 
     [self adjustViewControllerConstraints:(UIViewController<FWKLateralReusableController>*)toViewController];
@@ -227,7 +228,7 @@
     
 }
 
-- (void)adjustViewControllerConstraints:(UIViewController *)viewController
+- (void)adjustViewControllerConstraints:(UIViewController<FWKLateralReusableController>*)viewController
 {
     
     UIView *viewControllerView = [viewController view];
