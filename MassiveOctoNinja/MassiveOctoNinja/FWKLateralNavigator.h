@@ -33,6 +33,7 @@
 /**
  In order to prevent the costly initialization of many controllers, the system keeps a cache. Clients should query this API to obtain a controller associated with the key ready to be reuse. 
  @param identifier NSString instance of the key used to identify the controller class
+ @warning if the identifier has not been registered previously, the system trows an exception.
  */
 - (UIViewController <FWKLateralReusableController>*)dequeueReusableControllerWithIdentifier:(NSString *)identifier;
 @end
